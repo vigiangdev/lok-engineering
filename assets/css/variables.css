@@ -1,0 +1,25 @@
+:root {
+  --color-primary: #2c3e50;
+  --color-primary-contrast: #ececec;
+  --color-primary-shade: #0b2b4c;
+  --color-primary-tint: #283949;
+  --color-secondary: #503e2c;
+  --color-secondary-contrast: #ececec;
+  --color-secondary-shade: #4f351b;
+  --color-secondary-tint: #4c4239;
+  --color-tertiary: #359c56;
+  --color-tertiary-contrast: #ceebdb;
+  --color-tertiary-shade: #1e5c3f;
+  --color-tertiary-tint: #114a35;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #eceff3;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-background: var(--color-gray-50);
+}
