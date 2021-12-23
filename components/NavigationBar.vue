@@ -2,7 +2,12 @@
   <div class="navbar">
     <div class="navbar-container">
       <div class="company-logo">
-        <NuxtLink :to="{ name: 'index' }" exact class="navbar__brand">
+        <NuxtLink
+          :to="{ name: 'index' }"
+          exact
+          aria-label="Lok Engineering"
+          class="navbar__brand"
+        >
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"

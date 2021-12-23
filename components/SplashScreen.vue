@@ -156,7 +156,7 @@ a {
 
   .composition {
     position: relative;
-    width: 768px;
+    width: 720px;
     height: 480px;
     padding: 1rem;
   }

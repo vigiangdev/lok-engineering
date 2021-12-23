@@ -1,6 +1,6 @@
 <template>
   <div class="about-process">
-    <h4 class="about-title">Our Process</h4>
+    <h2 class="about-title">Our Process</h2>
     <div class="cards-container">
       <CardIcon
         v-for="(process, index) in processes"

@@ -1,17 +1,14 @@
 <template>
   <div class="footer">
     <div class="social-media">
-      <NuxtLink to="/redirect/YelpRedirect">
+      <NuxtLink to="/redirect/YelpRedirect" aria-label="Yelp">
         <font-awesome-icon :icon="['fab', 'yelp']" />
-        <span class="hidden">Yelp</span>
       </NuxtLink>
-      <NuxtLink to="/redirect/FacebookRedirect">
+      <NuxtLink to="/redirect/FacebookRedirect" aria-label="Facebook">
         <font-awesome-icon :icon="['fab', 'facebook-f']" />
-        <span class="hidden">Facebook</span>
       </NuxtLink>
-      <NuxtLink to="/redirect/LinkedinRedirect">
+      <NuxtLink to="/redirect/LinkedinRedirect" aria-label="LinkedIn">
         <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-        <span class="hidden">LinkedIn</span>
       </NuxtLink>
     </div>
     <div class="company-info">
@@ -62,9 +59,5 @@
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-}
-
-.hidden {
-  display: none;
 }
 </style>
