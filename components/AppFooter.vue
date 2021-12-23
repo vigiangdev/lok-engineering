@@ -1,15 +1,15 @@
 <template>
   <div class="footer">
     <div class="social-media">
-      <NuxtLink to="/redirect/yelp">
+      <NuxtLink to="/redirect/YelpRedirect">
         <font-awesome-icon :icon="['fab', 'yelp']" />
         <span class="hidden">Yelp</span>
       </NuxtLink>
-      <NuxtLink to="/redirect/facebook">
+      <NuxtLink to="/redirect/FacebookRedirect">
         <font-awesome-icon :icon="['fab', 'facebook-f']" />
         <span class="hidden">Facebook</span>
       </NuxtLink>
-      <NuxtLink to="/redirect/linkedin">
+      <NuxtLink to="/redirect/LinkedinRedirect">
         <font-awesome-icon :icon="['fab', 'linkedin-in']" />
         <span class="hidden">LinkedIn</span>
       </NuxtLink>
@@ -17,6 +17,7 @@
     <div class="company-info">
       <p>Copyright © 2021 Lok Engineering. All Rights Reserved</p>
       <p>Oakland, CA</p>
+      <p>info@lokengineering.com</p>
     </div>
   </div>
 </template>

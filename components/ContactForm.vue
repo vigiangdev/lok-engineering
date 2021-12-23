@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contact-form">
     <h2>Contact Us</h2>
     <form
       enctype="multipart/form-data"
@@ -412,6 +412,10 @@ export default {
 </script>
 
 <style scoped>
+.contact-form {
+  padding: 0 1rem;
+}
+
 h2 {
   text-align: center;
   margin: 0 0 1.6rem;

@@ -13,14 +13,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  css: [
-    '@/assets/css/styles',
-    '@/assets/css/variables',
-    '@/assets/css/fonts',
-    'aos/dist/aos.css',
-  ],
-
-  plugins: ['@/plugins/aos.client'],
+  css: ['@/assets/css/styles', '@/assets/css/variables', '@/assets/css/fonts'],
 
   components: true,
 
@@ -34,8 +27,6 @@ export default {
           {
             set: '@fortawesome/free-solid-svg-icons',
             icons: [
-              'faChevronLeft',
-              'faChevronRight',
               'faEnvelopeOpenText',
               'faCalendarAlt',
               'faComments',

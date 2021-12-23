@@ -2,8 +2,6 @@ const mongoose = require('mongoose')
 const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
-const mongoSanitize = require('express-mongo-sanitize')
-const rateLimit = require('express-rate-limit')
 const cors = require('cors')
 const config = require('./config/db')
 
@@ -19,14 +17,6 @@ app.disable('x-powered_by')
 app.use(cors())
 app.options('*', cors())
 app.use(helmet())
-app.use(
-  '/api',
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 5000,
-  })
-)
-app.use(mongoSanitize())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

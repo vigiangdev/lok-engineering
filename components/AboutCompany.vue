@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <h2>The Firm</h2>
-      <p>
+      <p class="card-container">
         <span class="emphasis"> Lok Engineering </span> is a full-service
         structural engineering firm based in Oakland, California. Our projects
         range from minor remodels to large-scale residential construction.
@@ -47,13 +47,14 @@ h2 {
 
 .container {
   margin: 0 0 5rem;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid var(--color-primary-contrast);
   background-color: var(--color-gray-200);
 }
 
-.container * {
-  background-color: var(--color-gray-200);
+.card-container {
+  padding: 1rem;
+  background-color: var(--color-gray-50);
 }
 
 .cards {

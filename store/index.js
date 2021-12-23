@@ -1,52 +1,20 @@
 import axios from 'axios'
 
 export const state = () => ({
-  activeProject: null,
-  projectsHome: [
-    {
-      id: 1,
-      title: '626 54th Street',
-      location: 'Oakland, CA',
-      slug: '626-54th-street',
-      image: '01.webp',
-      header: 'A NEW KIND OF ENGINEERING COMPANY',
-      quote: 'Innovative solutions that are within your budget',
-    },
-    {
-      id: 2,
-      title: '1406 Fairview Street',
-      location: 'Berkeley, CA',
-      slug: '1406-fairview-street',
-      image: '01.webp',
-      header: 'STELLAR REPUTATION',
-      quote: 'Always delivering more than expected',
-    },
-  ],
   projects: [
     {
       id: 1,
       title: '626 54th Street',
       location: 'Oakland, CA',
       slug: '626-54th-street',
-      thumbnail: '01.webp',
       images: ['01.webp', '02.webp', '03.webp', '04.webp', '05.webp'],
-      description: 'This was a complete remodel.',
-      engineer: 'Lok Engineering',
-      architect: "Architect's Name Company",
-      contractor: "Contractor's Name Company",
     },
     {
       id: 2,
       title: '1406 Fairview Street',
       location: 'Berkeley, CA',
       slug: '1406-fairview-street',
-      thumbnail: '01.webp',
       images: ['01.webp', '02.webp', '03.webp', '04.webp'],
-      description:
-        'This was a remodel of a single-family residence in Berkeley, CA.',
-      engineer: 'Lok Engineering',
-      architect: "Architect's Name Company",
-      contractor: "Contractor's Name Company",
     },
   ],
   staffs: [
@@ -101,17 +69,6 @@ export const getters = {
   projects(state) {
     return state.projects
   },
-  projectsHome(state) {
-    return state.projectsHome
-  },
-  projectBySlug(state) {
-    return (slug) => {
-      return state.projects.find((project) => project.slug === slug)
-    }
-  },
-  activeProject(state) {
-    return state.activeProject
-  },
   staffs(state) {
     return state.staffs
   },
@@ -120,14 +77,7 @@ export const getters = {
   },
 }
 
-export const mutations = {
-  setActiveProject(state, project) {
-    state.activeProject = project
-  },
-  removeActiveProject(state) {
-    state.activeProject = null
-  },
-}
+export const mutations = {}
 
 export const actions = {
   async verifyToken(context, token) {
@@ -156,13 +106,13 @@ export const actions = {
     return res.data
   },
 
-  async deleteFile(context, data) {
-    const res = await axios({
-      method: 'delete',
-      url: `/api/v1/quotes/${data.quoteId}/${data.fileId}`,
-    })
-    return res.data
-  },
+  // async deleteFile(context, data) {
+  //   const res = await axios({
+  //     method: 'delete',
+  //     url: `/api/v1/quotes/${data.quoteId}/${data.fileId}`,
+  //   })
+  //   return res.data
+  // },
 
   convertToFormData(context, files) {
     const formData = new FormData()

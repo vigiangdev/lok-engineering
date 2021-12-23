@@ -1,13 +1,15 @@
 <template>
   <div>
-    <SwiperScroll />
-    <div id="about" class="home-container">
+    <div id="splash" class="home-container">
+      <SplashScreen />
+    </div>
+    <div id="about" class="home-container divider">
       <AboutCompany />
     </div>
-    <div class="home-container">
+    <div class="home-container divider">
       <AboutProcess />
     </div>
-    <div id="contact" class="home-container">
+    <div id="contact" class="home-container divider">
       <ContactForm />
     </div>
   </div>
@@ -15,7 +17,6 @@
 
 <script>
 export default {
-  layout: 'HomeLayout',
   head: {
     title: 'Lok Engineering - Structural Engineer in SF Bay Area',
     meta: [
@@ -35,9 +36,18 @@ export default {
 
 <style scoped>
 .home-container {
-  max-width: 1140px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-top: 1px solid var(--color-primary-contrast);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+.divider {
+  border-top: 1px solid var(--color-gray-200);
+}
+
+#splash {
+  padding: 0;
+  width: 100vw;
+  max-width: initial;
 }
 </style>
