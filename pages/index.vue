@@ -23,7 +23,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'company-description',
+        hid: 'description',
         name: 'description',
         content:
           'Lok Engineering specializes in residential construction. We offer design services for seismic retrofits, additions, remodels, and new construction.',
