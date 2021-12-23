@@ -386,11 +386,11 @@ export default {
             // Delete Files End
 
             if (emailRes.data.success) {
-              this.$router.push({ path: '/contact/success' })
+              this.$router.push({ path: '/contact/RedirectSuccess' })
             } else {
               this.resetRecaptchaToken()
               this.isLoading = false
-              this.$router.push({ path: '/contact/fail' })
+              this.$router.push({ path: '/contact/RedirectFail' })
             }
           } else {
             this.resetRecaptchaToken()
@@ -401,7 +401,7 @@ export default {
         }
       } catch (err) {
         await this.resetRecaptchaToken()
-        this.$router.push({ path: '/contact/fail' })
+        this.$router.push({ path: '/contact/RedirectFail' })
       }
     },
     updateFiles(event) {
