@@ -123,25 +123,25 @@ a {
   }
 
   .composition-photo {
-    width: 33.33%;
+    width: 30%;
     box-shadow: 0.5rem 0.5rem 3rem var(--color-primary);
     position: absolute;
     transition: all 0.2s;
   }
 
   .composition-photo-p1 {
-    left: 1rem;
-    top: 0;
+    left: 10%;
+    top: 10%;
   }
 
   .composition-photo-p2 {
-    right: 1rem;
-    top: 0;
+    right: 10%;
+    top: 10%;
   }
 
   .composition-photo-p3 {
-    left: 33.33%;
-    top: 10%;
+    left: 35%;
+    top: 20%;
   }
 }
 

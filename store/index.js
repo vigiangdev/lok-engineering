@@ -25,7 +25,7 @@ export const state = () => ({
     },
     {
       role: 'Principal Engineer',
-      description: `Vi Giang is a co-principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
+      description: `Vi Giang is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
       image: `ryan.webp`,
     },
   ],
@@ -88,6 +88,14 @@ export const actions = {
     return res.data
   },
 
+  async getQuote(context, quoteId) {
+    const res = await axios({
+      method: 'get',
+      url: `/api/v1/quotes/${quoteId}`,
+    })
+    return res.data
+  },
+
   async addQuote(context, data) {
     const res = await axios({
       method: 'post',
@@ -106,13 +114,21 @@ export const actions = {
     return res.data
   },
 
-  // async deleteFile(context, data) {
-  //   const res = await axios({
-  //     method: 'delete',
-  //     url: `/api/v1/quotes/${data.quoteId}/${data.fileId}`,
-  //   })
-  //   return res.data
-  // },
+  async deleteFile(context, data) {
+    const res = await axios({
+      method: 'delete',
+      url: `/api/v1/quotes/${data.quoteId}/${data.fileId}`,
+    })
+    return res.data
+  },
+
+  async deleteQuote(context, quoteId) {
+    const res = await axios({
+      method: 'delete',
+      url: `/api/v1/quotes/${quoteId}`,
+    })
+    return res.data
+  },
 
   convertToFormData(context, files) {
     const formData = new FormData()

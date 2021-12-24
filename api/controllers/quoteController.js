@@ -1,4 +1,4 @@
-// const fs = require('fs')
+const fs = require('fs')
 const multer = require('multer')
 const mime = require('mime-types')
 
@@ -127,88 +127,88 @@ exports.addQuoteFiles = async (req, res, next) => {
   }
 }
 
-// exports.deleteQuote = async (req, res, next) => {
-//   try {
-//     await Quote.findByIdAndDelete(req.params.quote_id)
-//     res.status(200).json({
-//       success: true,
-//       message: 'Successfully deleted record.',
-//     })
-//   } catch (err) {
-//     res.status(400).json({
-//       success: false,
-//       message: 'Error. Failed to delete record.',
-//     })
-//   }
-// }
+exports.deleteQuote = async (req, res, next) => {
+  try {
+    await Quote.findByIdAndDelete(req.params.quote_id)
+    res.status(200).json({
+      success: true,
+      message: 'Successfully deleted record.',
+    })
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: 'Error. Failed to delete record.',
+    })
+  }
+}
 
-// exports.deleteFile = async (req, res, next) => {
-//   try {
-//     const quote = await Quote.findById(req.params.quote_id)
-//     if (quote) {
-//       quote.files.forEach(async (file) => {
-//         if (file._id.toString() === req.params.file_id) {
-//           await fs.unlink(file.path, (err) => {
-//             if (err) console.log(err)
-//           })
-//         }
-//       })
-//       return next()
-//     } else {
-//       res.status(404).json({
-//         success: false,
-//         message: 'Quote not found.',
-//       })
-//     }
-//   } catch (err) {
-//     res.status(400).json({
-//       success: false,
-//       message: 'Failed to delete file.',
-//     })
-//   }
-// }
+exports.deleteFile = async (req, res, next) => {
+  try {
+    const quote = await Quote.findById(req.params.quote_id)
+    if (quote) {
+      quote.files.forEach(async (file) => {
+        if (file._id.toString() === req.params.file_id) {
+          await fs.unlink(file.path, (err) => {
+            if (err) console.log(err)
+          })
+        }
+      })
+      return next()
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'Quote not found.',
+      })
+    }
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: 'Failed to delete file.',
+    })
+  }
+}
 
-// exports.deleteQuoteFile = async (req, res, next) => {
-//   try {
-//     const quote = await Quote.findById(req.params.quote_id)
-//     if (quote) {
-//       const removedFile = quote.files.filter((file) => {
-//         return file._id.toString() === req.params.file_id
-//       })
+exports.deleteQuoteFile = async (req, res, next) => {
+  try {
+    const quote = await Quote.findById(req.params.quote_id)
+    if (quote) {
+      const removedFile = quote.files.filter((file) => {
+        return file._id.toString() === req.params.file_id
+      })
 
-//       if (removedFile.length === 0) {
-//         res.status(404).json({
-//           status: false,
-//           message: 'File does not exist.',
-//         })
-//         return next()
-//       }
+      if (removedFile.length === 0) {
+        res.status(404).json({
+          status: false,
+          message: 'File does not exist.',
+        })
+        return next()
+      }
 
-//       const updatedFiles = quote.files.filter((file) => {
-//         return file._id.toString() !== req.params.file_id
-//       })
+      const updatedFiles = quote.files.filter((file) => {
+        return file._id.toString() !== req.params.file_id
+      })
 
-//       quote.files = updatedFiles
+      quote.files = updatedFiles
 
-//       await Quote.findByIdAndUpdate(req.params.quote_id, quote, {
-//         new: true,
-//       })
+      await Quote.findByIdAndUpdate(req.params.quote_id, quote, {
+        new: true,
+      })
 
-//       res.status(200).json({
-//         success: true,
-//         quote: removedFile,
-//         message: 'Successfully deleted file record.',
-//       })
-//     } else {
-//       res.status(404).json({
-//         success: false,
-//         message: 'Quote not found.',
-//       })
-//     }
-//   } catch (err) {
-//     res.status(400).json({
-//       success: false,
-//       message: err.message,
-//     })
-//   }
-// }
+      res.status(200).json({
+        success: true,
+        quote: removedFile,
+        message: 'Successfully deleted file record.',
+      })
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'Quote not found.',
+      })
+    }
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: err.message,
+    })
+  }
+}

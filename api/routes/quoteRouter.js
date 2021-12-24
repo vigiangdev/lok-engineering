@@ -24,14 +24,14 @@ router
   .route('/:quote_id')
   .get(quoteController.getQuote)
   .patch(quoteController.updateQuote)
-// .delete(quoteController.deleteQuote)
+  .delete(quoteController.deleteQuote)
 
 router
   .route('/:quote_id/file-upload')
   .post(upload.any(), quoteController.addQuoteFiles)
 
-// router
-//   .route('/:quote_id/:file_id')
-//   .delete(quoteController.deleteFile, quoteController.deleteQuoteFile)
+router
+  .route('/:quote_id/:file_id')
+  .delete(quoteController.deleteFile, quoteController.deleteQuoteFile)
 
 module.exports = router

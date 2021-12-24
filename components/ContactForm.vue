@@ -94,8 +94,10 @@
       </div>
 
       <div class="container message">
-        We want to meet your project's timeline and budgeting goals. Let us know
-        what you have in mind so we can better assist you.
+        <p>
+          We want to meet your project's timeline and budgeting goals. Let us
+          know what you have in mind so we can better assist you.
+        </p>
       </div>
 
       <div class="container">
@@ -116,16 +118,14 @@
         <input
           id="budget"
           v-model="data.clientBudget"
-          type="number"
+          type="text"
           name="budget"
-          min="0"
-          step="any"
         />
       </div>
 
       <br />
       <div class="container">
-        <label>How did you hear about us? (Check all that applies):</label>
+        <label>How did you hear about us? (Check all that apply):</label>
         <div class="referral-container">
           <input
             id="referral"
@@ -329,7 +329,10 @@ export default {
   methods: {
     ...mapActions([
       'verifyToken',
+      'getQuote',
       'addQuote',
+      'deleteFile',
+      'deleteQuote',
       'convertToFormData',
       'uploadFiles',
       'sendEmail',
@@ -358,7 +361,6 @@ export default {
         this.error = 'Error. Unable to reset reCAPTCHA token.'
       }
     },
-
     async sendMessage() {
       try {
         this.isLoading = true
@@ -371,7 +373,7 @@ export default {
         } else {
           const tokenVerification = await this.verifyToken(this.token)
           if (tokenVerification.data.success) {
-            const res = await this.addQuote(this.data)
+            let res = await this.addQuote(this.data)
             if (this.files) {
               const formData = await this.convertToFormData(this.files)
               const fileRes = await this.uploadFiles({
@@ -382,8 +384,16 @@ export default {
             }
             const emailRes = await this.sendEmail(this.data)
 
-            // Delete Files
-            // Delete Files End
+            res = await this.getQuote(res.quote._id)
+            const updatedQuote = res.quote
+            for (const file of updatedQuote.files) {
+              await this.deleteFile({
+                quoteId: updatedQuote._id,
+                fileId: file._id,
+              })
+            }
+
+            await this.deleteQuote(res.quote._id)
 
             if (emailRes.data.success) {
               this.$router.push({ path: '/contact/RedirectSuccess' })
@@ -437,10 +447,6 @@ h2 {
   width: 100%;
 }
 
-.container p {
-  padding: 0 0 1rem;
-}
-
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -489,8 +495,8 @@ select:focus {
   padding: 0.25rem 0.5rem;
 }
 
-.message {
-  margin: 3rem 0 1rem;
+.container p {
+  margin: 1rem 0;
   font-size: 1.1rem;
   font-weight: 500;
 }

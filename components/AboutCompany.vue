@@ -16,7 +16,7 @@
       </p>
     </div>
 
-    <h2>Who We Are</h2>
+    <h2>The Team</h2>
     <div class="cards">
       <CardImage v-for="(staff, index) in staffs" :key="index" :staff="staff" />
     </div>
