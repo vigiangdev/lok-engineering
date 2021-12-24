@@ -18,7 +18,7 @@
 <script>
 export default {
   head: {
-    title: 'Lok Engineering - Structural Engineer in SF Bay Area',
+    title: 'Lok Engineering - Structural Engineer | SF Bay Area',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +26,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'Lok Engineering specializes in residential construction. We offer design services for seismic retrofits, additions, remodels, and new construction.',
+          'Structural engineers who specialize in residential buildings. We offer design services for new construction, ADUs, additions, remodels, and seismic retrofits.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
