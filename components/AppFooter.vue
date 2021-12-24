@@ -1,15 +1,18 @@
 <template>
   <div class="footer">
     <div class="social-media">
-      <NuxtLink to="/redirect/YelpRedirect" aria-label="Yelp">
+      <a href="https://www.yelp.com" aria-label="Yelp">
         <font-awesome-icon :icon="['fab', 'yelp']" />
-      </NuxtLink>
-      <NuxtLink to="/redirect/FacebookRedirect" aria-label="Facebook">
+      </a>
+      <a href="https://www.facebook.com/LokEngineering" aria-label="Facebook">
         <font-awesome-icon :icon="['fab', 'facebook-f']" />
-      </NuxtLink>
-      <NuxtLink to="/redirect/LinkedinRedirect" aria-label="LinkedIn">
+      </a>
+      <a
+        href="https://www.linkedin.com/company/lok-engineering"
+        aria-label="LinkedIn"
+      >
         <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-      </NuxtLink>
+      </a>
     </div>
     <div class="company-info">
       <p>Copyright © 2021 Lok Engineering. All Rights Reserved</p>
