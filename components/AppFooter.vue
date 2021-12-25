@@ -67,7 +67,6 @@
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
-  transition: all 0.3s;
 }
 
 .social-media a:hover {
