@@ -43,9 +43,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 1rem;
-  margin: 0.5em;
-  border-radius: 2rem;
-  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-100);
 }
 
 .container {

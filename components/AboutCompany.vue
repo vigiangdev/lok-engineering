@@ -30,7 +30,7 @@ h2 {
 }
 
 .container {
-  border: 1px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   border-radius: 2rem;
   background-color: var(--color-gray-100);
   overflow: hidden;
@@ -39,6 +39,7 @@ h2 {
 
 .card-container {
   padding: 2rem;
+  line-height: 1.6rem;
   background-color: var(--color-gray-50);
 }
 </style>

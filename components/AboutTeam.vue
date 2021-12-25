@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .container {
-  border: 1px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   border-radius: 2rem;
   background-color: var(--color-gray-100);
   overflow: hidden;
@@ -35,7 +35,7 @@ h2 {
 .cards {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--color-gray-50);
 }
 
 @media (min-width: 992px) {

@@ -425,7 +425,7 @@ export default {
 .contact-form {
   margin: 1rem;
   background-color: var(--color-gray-100);
-  border: 1px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   border-radius: 2rem;
   overflow: hidden;
 }
@@ -443,7 +443,7 @@ h2 {
   font-size: 1rem;
   width: 100%;
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .container {
@@ -539,6 +539,10 @@ svg rect {
   .flex-column {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .contactform {
+    padding: 1rem 2rem;
   }
 }
 </style>

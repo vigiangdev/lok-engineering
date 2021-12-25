@@ -1,19 +1,21 @@
 <template>
   <div>
-    <div id="splash" class="home-container">
+    <div id="splash">
       <SplashScreen />
     </div>
-    <div id="about-company" class="home-container">
-      <AboutCompany />
-    </div>
-    <div id="about-team" class="home-container divider">
-      <AboutTeam />
-    </div>
-    <div class="home-container divider">
-      <AboutProcess />
-    </div>
-    <div id="contact" class="home-container divider">
-      <ContactForm />
+    <div class="home-contain">
+      <div id="about-company" class="home-container">
+        <AboutCompany />
+      </div>
+      <div class="home-container">
+        <AboutTeam />
+      </div>
+      <div class="home-container">
+        <AboutProcess />
+      </div>
+      <div id="contact" class="home-container">
+        <ContactForm />
+      </div>
     </div>
   </div>
 </template>
@@ -38,10 +40,14 @@ export default {
 </script>
 
 <style scoped>
+.home-contain {
+  margin: 2rem 0;
+}
+
 .home-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
 .divider {

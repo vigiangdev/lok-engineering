@@ -53,7 +53,7 @@ export default {
 }
 
 .container {
-  border: 1px solid var(--color-gray-100);
+  border: 2px solid var(--color-gray-100);
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
@@ -68,6 +68,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 1rem;
   background-color: var(--color-gray-100);
 }
 

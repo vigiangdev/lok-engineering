@@ -1,7 +1,7 @@
 <template>
-  <div class="about-process">
-    <h2 class="about-title">Our Process</h2>
-    <div class="cards-container">
+  <div class="container">
+    <h2>Our Process</h2>
+    <div class="cards">
       <CardIcon
         v-for="(process, index) in processes"
         :key="index"
@@ -22,14 +22,14 @@ export default {
 </script>
 
 <style scoped>
-.about-process {
-  border: 1px solid var(--color-gray-100);
+.container {
+  border: 2px solid var(--color-gray-100);
   overflow: hidden;
   border-radius: 2rem;
   margin: 1rem;
 }
 
-.about-title {
+h2 {
   font-size: 1.6rem;
   text-align: center;
   padding: 2rem;
@@ -37,17 +37,16 @@ export default {
   background-color: var(--color-gray-100);
 }
 
-.cards-container {
+.cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 1rem;
-  padding: 0 0.5rem 0.5rem;
-  background-color: var(--color-gray-100);
+  background-color: var(--color-gray-50);
 }
 
 @media (min-width: 992px) {
-  .cards-container {
+  .cards {
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
