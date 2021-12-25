@@ -23,7 +23,10 @@ export default {
 
 <style scoped>
 .about-process {
-  border: 1px solid var(--color-primary-contrast);
+  border: 1px solid var(--color-gray-100);
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 1rem;
 }
 
 .about-title {
@@ -31,7 +34,7 @@ export default {
   text-align: center;
   padding: 1.5rem;
   font-weight: normal;
-  background-color: var(--color-gray-200);
+  background-color: var(--color-gray-100);
 }
 
 .cards-container {
@@ -40,7 +43,7 @@ export default {
   justify-content: center;
   font-size: 1rem;
   padding: 0 0.5rem 0.5rem;
-  background-color: var(--color-gray-200);
+  background-color: var(--color-gray-100);
 }
 
 @media (min-width: 992px) {

@@ -44,7 +44,8 @@ export default {
   align-items: center;
   padding: 1rem;
   margin: 0.5em;
-  background-color: var(--color-background);
+  border-radius: 2rem;
+  background-color: var(--color-gray-50);
 }
 
 .container {

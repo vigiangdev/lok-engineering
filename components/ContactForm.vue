@@ -423,14 +423,18 @@ export default {
 
 <style scoped>
 .contact-form {
-  padding: 0 1rem;
+  margin: 1rem;
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-gray-100);
+  border-radius: 2rem;
+  overflow: hidden;
 }
 
 h2 {
   text-align: center;
-  margin: 0 0 1.6rem;
   font-size: 1.6rem;
   font-weight: normal;
+  padding: 2rem;
 }
 
 .contactform {
@@ -438,6 +442,8 @@ h2 {
   flex-direction: column;
   font-size: 1rem;
   width: 100%;
+  background-color: white;
+  padding: 1rem 2rem;
 }
 
 .container {

@@ -151,7 +151,7 @@
         </NuxtLink>
       </div>
       <div class="nav-bar">
-        <NuxtLink v-scroll-to="'#about'" to="/">ABOUT</NuxtLink>
+        <NuxtLink v-scroll-to="'#about-company'" to="/">ABOUT</NuxtLink>
         <NuxtLink v-scroll-to="'#contact'" to="/">CONTACT</NuxtLink>
       </div>
     </div>

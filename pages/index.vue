@@ -3,8 +3,11 @@
     <div id="splash" class="home-container">
       <SplashScreen />
     </div>
-    <div id="about" class="home-container">
+    <div id="about-company" class="home-container">
       <AboutCompany />
+    </div>
+    <div id="about-team" class="home-container divider">
+      <AboutTeam />
     </div>
     <div class="home-container divider">
       <AboutProcess />

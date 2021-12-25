@@ -19,13 +19,15 @@ export const state = () => ({
   ],
   staffs: [
     {
-      role: 'Principal Engineer',
+      name: 'Ryan Lok',
+      role: 'Principal',
       description: `Ryan Lok is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
       image: `ryan.webp`,
     },
     {
-      role: 'Principal Engineer',
-      description: `Vi Giang is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
+      name: 'Vi Giang',
+      role: 'Principal',
+      description: `Ryan Lok is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
       image: `ryan.webp`,
     },
   ],
