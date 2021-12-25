@@ -41,7 +41,7 @@ export default {
 .home-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2.5rem 0;
+  padding: 2rem 0;
 }
 
 .divider {

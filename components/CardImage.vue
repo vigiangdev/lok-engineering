@@ -84,7 +84,7 @@ export default {
 }
 
 .staff-role {
-  color: var(--color-gray-500);
+  color: var(--color-gray-600);
 }
 
 .image {

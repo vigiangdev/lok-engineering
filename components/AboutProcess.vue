@@ -32,7 +32,7 @@ export default {
 .about-title {
   font-size: 1.6rem;
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   font-weight: normal;
   background-color: var(--color-gray-100);
 }
