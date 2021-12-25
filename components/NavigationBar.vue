@@ -196,7 +196,12 @@
 .nav-bar a {
   text-decoration: none;
   color: var(--color-primary);
-  margin: 0.5rem 1rem;
-  cursor: default;
+  margin: 0.5rem 0.25rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.nav-bar a:hover {
+  background-color: var(--color-gray-100);
 }
 </style>

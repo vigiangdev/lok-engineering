@@ -12,26 +12,18 @@ button {
   font-weight: 500;
   letter-spacing: 0.2rem;
   padding: 0.5rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-gray-600);
   border: 0;
   border-radius: 1.5rem;
-  color: var(--color-tertiary-contrast);
+  color: var(--color-gray-50);
   cursor: pointer;
   width: 100%;
   min-height: 48px;
   margin: 0 auto;
-  box-shadow: 2px 2px 5px var(--color-primary);
-  transition: all 0.3s;
 }
 
 button:hover {
-  transform: scale(1.02);
-  box-shadow: 4px 4px 10px var(--color-primary);
-}
-
-button:active {
-  transform: scale(1);
-  box-shadow: 2px 2px 5px var(--color-primary);
+  background-color: var(--color-primary);
 }
 
 button:focus {
