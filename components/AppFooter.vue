@@ -1,7 +1,10 @@
 <template>
   <div class="footer">
     <div class="social-media">
-      <a href="https://www.yelp.com" aria-label="Yelp">
+      <a
+        href="https://www.yelp.com/biz/lok-engineering-oakland-2"
+        aria-label="Yelp"
+      >
         <font-awesome-icon :icon="['fab', 'yelp']" />
       </a>
       <a href="https://www.facebook.com/LokEngineering" aria-label="Facebook">
@@ -13,11 +16,13 @@
       >
         <font-awesome-icon :icon="['fab', 'linkedin-in']" />
       </a>
+      <a href="mailto:info@lokengineering.com" aria-label="Email">
+        <font-awesome-icon :icon="['fas', 'at']" />
+      </a>
     </div>
     <div class="company-info">
       <p>Copyright © 2021 Lok Engineering. All Rights Reserved</p>
       <p>Oakland, CA</p>
-      <p>info@lokengineering.com</p>
     </div>
   </div>
 </template>

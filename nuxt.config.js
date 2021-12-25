@@ -28,6 +28,7 @@ export default {
             set: '@fortawesome/free-solid-svg-icons',
             icons: [
               'faEnvelopeOpenText',
+              'faAt',
               'faCalendarAlt',
               'faComments',
               'faPencilRuler',

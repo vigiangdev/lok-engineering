@@ -3,7 +3,7 @@
     <div id="splash" class="home-container">
       <SplashScreen />
     </div>
-    <div id="about" class="home-container divider">
+    <div id="about" class="home-container">
       <AboutCompany />
     </div>
     <div class="home-container divider">
@@ -49,5 +49,6 @@ export default {
   padding: 0;
   width: 100vw;
   max-width: initial;
+  box-shadow: 1px 1px 5px #888;
 }
 </style>
