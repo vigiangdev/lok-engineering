@@ -442,7 +442,7 @@ h2 {
   flex-direction: column;
   font-size: 1rem;
   width: 100%;
-  background-color: white;
+  background-color: var(--color-gray-50);
   padding: 1rem;
 }
 
