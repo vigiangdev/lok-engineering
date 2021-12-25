@@ -202,7 +202,7 @@
 
       <div class="btn-container">
         <AppButton type="submit">
-          <span v-if="!isLoading" class="send">Send</span>
+          <span v-if="!isLoading" class="send">SEND</span>
           <svg
             v-if="isLoading"
             id="Layer_1"
