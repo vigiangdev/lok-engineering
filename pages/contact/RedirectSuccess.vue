@@ -1,10 +1,9 @@
 <template>
   <div class="success-container">
-    <h1 class="success-title">Success</h1>
+    <h1 class="success-title">Success!</h1>
     <div class="success-message">
-      <p>Thank you for reaching out.</p>
       <p>
-        Please give us some time to review your request, and we will get back to
+        Please give us some time to review your request and we will get back to
         you as soon as possible.
       </p>
       <br />
@@ -42,14 +41,15 @@ export default {
 .success-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
-  width: 100vw;
-  height: calc(100vh - 8rem);
+  width: 100%;
+  height: calc(100vh - 6rem);
 }
 
 .success-title {
-  font-size: 1.4rem;
+  font-size: 2rem;
   padding: 1rem;
 }
 

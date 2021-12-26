@@ -16,14 +16,15 @@
 .failure-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
-  width: 100vw;
-  height: calc(100vh - 8rem);
+  width: 100%;
+  height: calc(100vh - 6rem);
 }
 
 .failure-title {
-  font-size: 1.4rem;
+  font-size: 2rem;
   padding: 1rem;
 }
 

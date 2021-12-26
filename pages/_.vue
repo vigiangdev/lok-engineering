@@ -21,8 +21,9 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
   width: 100%;
-  height: calc(100vh - 9em);
+  height: calc(100vh - 6rem);
 }
 
 h1 {
