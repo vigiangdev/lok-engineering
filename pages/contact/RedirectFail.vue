@@ -12,6 +12,20 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      timer: 10,
+    }
+  },
+  head: {
+    title: 'Lok Engineering - Message Failure',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+}
+</script>
+
 <style scoped>
 .failure-container {
   display: flex;

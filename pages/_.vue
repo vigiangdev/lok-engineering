@@ -7,6 +7,10 @@
 
 <script>
 export default {
+  head: {
+    title: 'Lok Engineering - Page Not Found',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   created() {
     setTimeout(() => {
       this.$router.push({ name: 'index' })

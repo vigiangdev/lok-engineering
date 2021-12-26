@@ -19,6 +19,10 @@ export default {
       timer: 10,
     }
   },
+  head: {
+    title: 'Lok Engineering - Message Sent',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   created() {
     this.decrementTimer()
     setTimeout(() => {
