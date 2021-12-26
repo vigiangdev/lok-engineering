@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1 class="title">Success</h1>
-    <div class="message">
+  <div class="success-container">
+    <h1 class="success-title">Success</h1>
+    <div class="success-message">
       <p>Thank you for reaching out.</p>
       <p>
         Please give us some time to review your request, and we will get back to
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.success-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,12 +48,12 @@ export default {
   height: calc(100vh - 8rem);
 }
 
-.title {
+.success-title {
   font-size: 1.4rem;
   padding: 1rem;
 }
 
-.message {
+.success-message {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ export default {
   justify-content: center;
 }
 
-.message p {
+.success-message p {
   text-align: center;
 }
 </style>

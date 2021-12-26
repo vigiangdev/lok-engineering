@@ -26,12 +26,14 @@ export default {
 }
 
 h1 {
-  font-size: 3em;
-  padding: 1em;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  padding: 1rem;
 }
 
 p {
-  font-size: 2em;
-  padding: 1em;
+  font-size: 2rem;
+  padding: 1rem;
 }
 </style>

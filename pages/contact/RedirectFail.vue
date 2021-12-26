@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <h1 class="title">Message Not Sent</h1>
-    <div class="message">
+  <div class="failure-container">
+    <h1 class="failure-title">Message Not Sent</h1>
+    <div class="failure-message">
       <p>There was an error with the request. Please try again.</p>
       <br />
       <p>
@@ -13,7 +13,7 @@
 </template>
 
 <style scoped>
-.container {
+.failure-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,12 +22,12 @@
   height: calc(100vh - 8rem);
 }
 
-.title {
+.failure-title {
   font-size: 1.4rem;
   padding: 1rem;
 }
 
-.message {
+.failure-message {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
   justify-content: center;
 }
 
-.message p {
+.failure-message p {
   text-align: center;
 }
 </style>
