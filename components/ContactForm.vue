@@ -475,12 +475,14 @@ label {
 input,
 textarea {
   border: 1px solid var(--color-gray-300);
+  background-color: white;
   padding: 0.5rem;
   transition: all 0.2s;
 }
 
 select {
   border: 1px solid var(--color-gray-300);
+  background-color: white;
   padding: 0.5rem;
   transition: all 0.2s;
 }
