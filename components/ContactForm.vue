@@ -538,7 +538,7 @@ select:focus {
 }
 
 svg {
-  background-color: var(--color-primary);
+  background-color: inherit;
 }
 
 svg path,
