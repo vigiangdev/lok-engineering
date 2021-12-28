@@ -104,7 +104,7 @@ exports.sendEmail = async (req, res, next) => {
         message +
         `
         <tr>
-          <td>Due Date:</td>
+          <td>Role:</td>
           <td>${req.body.role}</td>
         </tr>
       `
