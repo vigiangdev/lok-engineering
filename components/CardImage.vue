@@ -46,6 +46,8 @@ export default {
 .image-content {
   font-size: 1rem;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .header {

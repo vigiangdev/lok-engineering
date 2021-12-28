@@ -6,7 +6,6 @@
       class="contactform"
       @submit.prevent="sendMessage"
     >
-      <!-- <input type="hidden" name="_csrf" :value="csrfToken" /> -->
       <div class="container">
         <p>
           Fill out the form below if you have any questions or would like to
