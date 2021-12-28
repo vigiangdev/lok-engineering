@@ -27,7 +27,9 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/recaptcha": "^1.0.4",
+    "cookie-parser": "^1.4.6",
     "core-js": "^3.20.1",
+    "csurf": "^1.11.0",
     "express": "^4.17.2",
     "googleapis": "^92.0.0",
     "helmet": "^4.6.0",
@@ -44,7 +46,8 @@
     "vue-scrollto": "^2.20.0",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "xss": "^1.0.10"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",

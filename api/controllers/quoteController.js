@@ -1,21 +1,22 @@
 const fs = require('fs')
 const multer = require('multer')
 const mime = require('mime-types')
+const xss = require('xss')
 
 const Quote = require('../models/Quote')
 
 exports.addQuote = async (req, res, next) => {
   try {
     const quoteInfo = {
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-      role: req.body.role,
-      location: req.body.location,
-      description: req.body.description,
-      clientDueDate: req.body.clientDueDate,
-      clientBudget: req.body.clientBudget,
-      survey: req.body.survey,
+      name: xss(req.body.name),
+      phone: xss(req.body.phone),
+      email: xss(req.body.email),
+      role: xss(req.body.role),
+      location: xss(req.body.location),
+      description: xss(req.body.description),
+      clientDueDate: xss(req.body.clientDueDate),
+      clientBudget: xss(req.body.clientBudget),
+      survey: xss(req.body.survey),
     }
     const quote = await Quote.create(quoteInfo)
     res.status(201).json({
@@ -33,7 +34,7 @@ exports.addQuote = async (req, res, next) => {
 
 exports.getQuote = async (req, res, next) => {
   try {
-    const quote = await Quote.findById(req.params.quote_id)
+    const quote = await Quote.findById(xss(req.params.quote_id))
     res.status(200).json({
       success: true,
       quote,
@@ -46,45 +47,49 @@ exports.getQuote = async (req, res, next) => {
   }
 }
 
-exports.getQuotes = async (req, res, next) => {
-  try {
-    const quotes = await Quote.find(req.query)
-    res.status(200).json({
-      success: true,
-      quotes,
-    })
-  } catch (err) {
-    res.status(400).json({
-      success: false,
-      message: err.message,
-    })
-  }
-}
+// exports.getQuotes = async (req, res, next) => {
+//   try {
+//     const quotes = await Quote.find(req.query)
+//     res.status(200).json({
+//       success: true,
+//       quotes,
+//     })
+//   } catch (err) {
+//     res.status(400).json({
+//       success: false,
+//       message: err.message,
+//     })
+//   }
+// }
 
-exports.updateQuote = async (req, res, next) => {
-  try {
-    const quote = await Quote.findByIdAndUpdate(req.params.quote_id, req.body, {
-      new: true,
-    })
-    if (quote) {
-      res.status(200).json({
-        success: true,
-        quote,
-        message: 'Successfully updated record.',
-      })
-    } else {
-      res.status(404).json({
-        success: false,
-        message: 'Quote not found.',
-      })
-    }
-  } catch (err) {
-    res.status(400).json({
-      success: false,
-      message: err.message,
-    })
-  }
-}
+// exports.updateQuote = async (req, res, next) => {
+//   try {
+//     const quote = await Quote.findByIdAndUpdate(
+//       xss(req.params.quote_id),
+//       xss(req.body),
+//       {
+//         new: true,
+//       }
+//     )
+//     if (quote) {
+//       res.status(200).json({
+//         success: true,
+//         quote,
+//         message: 'Successfully updated record.',
+//       })
+//     } else {
+//       res.status(404).json({
+//         success: false,
+//         message: 'Quote not found.',
+//       })
+//     }
+//   } catch (err) {
+//     res.status(400).json({
+//       success: false,
+//       message: err.message,
+//     })
+//   }
+// }
 
 exports.addFiles = (req, res, next) => {
   const storage = multer.diskStorage({
@@ -106,13 +111,13 @@ exports.addFiles = (req, res, next) => {
 exports.addQuoteFiles = async (req, res, next) => {
   try {
     const newFiles = []
-    const quote = await Quote.findById(req.params.quote_id)
+    const quote = await Quote.findById(xss(req.params.quote_id))
     req.files.forEach((file) => {
       quote.files.push(file)
       newFiles.push(file)
     })
 
-    await Quote.findByIdAndUpdate(req.params.quote_id, quote)
+    await Quote.findByIdAndUpdate(xss(req.params.quote_id), quote)
 
     res.status(200).json({
       success: true,
@@ -129,7 +134,7 @@ exports.addQuoteFiles = async (req, res, next) => {
 
 exports.deleteQuote = async (req, res, next) => {
   try {
-    await Quote.findByIdAndDelete(req.params.quote_id)
+    await Quote.findByIdAndDelete(xss(req.params.quote_id))
     res.status(200).json({
       success: true,
       message: 'Successfully deleted record.',
@@ -144,7 +149,7 @@ exports.deleteQuote = async (req, res, next) => {
 
 exports.deleteFile = async (req, res, next) => {
   try {
-    const quote = await Quote.findById(req.params.quote_id)
+    const quote = await Quote.findById(xss(req.params.quote_id))
     if (quote) {
       quote.files.forEach(async (file) => {
         if (file._id.toString() === req.params.file_id) {
@@ -170,7 +175,7 @@ exports.deleteFile = async (req, res, next) => {
 
 exports.deleteQuoteFile = async (req, res, next) => {
   try {
-    const quote = await Quote.findById(req.params.quote_id)
+    const quote = await Quote.findById(xss(req.params.quote_id))
     if (quote) {
       const removedFile = quote.files.filter((file) => {
         return file._id.toString() === req.params.file_id
@@ -190,7 +195,7 @@ exports.deleteQuoteFile = async (req, res, next) => {
 
       quote.files = updatedFiles
 
-      await Quote.findByIdAndUpdate(req.params.quote_id, quote, {
+      await Quote.findByIdAndUpdate(xss(req.params.quote_id), quote, {
         new: true,
       })
 

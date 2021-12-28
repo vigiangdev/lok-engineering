@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const helmet = require('helmet')
+const csrf = require('csurf')
 const config = require('./config/db')
+
+const csrfProtection = csrf({ cookie: true })
 
 const app = express()
 
@@ -10,10 +14,27 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
 
-app.enable('trust proxy')
-app.disable('x-powered_by')
-
 app.use(helmet())
+app.use(
+  helmet.frameguard({
+    action: 'deny',
+  })
+)
+app.use(
+  helmet.hsts({
+    maxAge: 15552000,
+  })
+)
+app.use(helmet.hidePoweredBy())
+app.use(helmet.ieNoOpen())
+app.use(helmet.noSniff())
+app.use(
+  helmet.referrerPolicy({
+    policy: ['strict-origin-when-cross-origin'],
+  })
+)
+app.use(helmet.xssFilter())
+app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -21,6 +42,9 @@ const emailRouter = require('./routes/emailRouter')
 const quoteRouter = require('./routes/quoteRouter')
 const recaptchaRouter = require('./routes/recaptchaRouter')
 
+app.use('/v1/csrftoken', csrfProtection, function (req, res) {
+  return res.json({ csrfToken: req.csrfToken() })
+})
 app.use('/v1/email', emailRouter)
 app.use('/v1/quotes', quoteRouter)
 app.use('/v1/recaptcha', recaptchaRouter)

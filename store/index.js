@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export const state = () => ({
+  csrfToken: null,
   projects: [
     {
       id: 1,
@@ -27,8 +28,8 @@ export const state = () => ({
     {
       name: 'Vi Giang',
       role: 'Principal',
-      description: `Ryan Lok is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
-      image: `ryan.webp`,
+      description: `Vi Giang is the principal engineer of Lok Engineering. He received a BS in Structural Engineering at the University of California, San Diego and has accumulated 8 years of engineering experience in residential construction.`,
+      image: `vi.webp`,
     },
   ],
   processes: [
@@ -68,6 +69,9 @@ export const state = () => ({
 })
 
 export const getters = {
+  csrfToken(state) {
+    return state.csrfToken
+  },
   projects(state) {
     return state.projects
   },
@@ -79,9 +83,22 @@ export const getters = {
   },
 }
 
-export const mutations = {}
+export const mutations = {
+  setCsrfToken(state, token) {
+    state.csrfToken = token
+  },
+}
 
 export const actions = {
+  async getCsrfToken(context) {
+    const res = await axios({
+      method: 'get',
+      url: '/api/v1/csrftoken',
+    })
+
+    context.commit('setCsrfToken', res.data.csrfToken)
+  },
+
   async verifyToken(context, token) {
     const res = await axios({
       method: 'get',
@@ -101,6 +118,9 @@ export const actions = {
   async addQuote(context, data) {
     const res = await axios({
       method: 'post',
+      headers: {
+        'X-XSRF-TOKEN': context.getters.csrfToken,
+      },
       url: '/api/v1/quotes',
       data,
     })
@@ -111,6 +131,9 @@ export const actions = {
     const res = await axios({
       method: 'post',
       url: `/api/v1/quotes/${data.quoteId}/file-upload`,
+      headers: {
+        'X-XSRF-TOKEN': context.getters.csrfToken,
+      },
       data: data.files,
     })
     return res.data
@@ -119,6 +142,9 @@ export const actions = {
   async deleteFile(context, data) {
     const res = await axios({
       method: 'delete',
+      headers: {
+        'X-XSRF-TOKEN': context.getters.csrfToken,
+      },
       url: `/api/v1/quotes/${data.quoteId}/${data.fileId}`,
     })
     return res.data
@@ -127,6 +153,9 @@ export const actions = {
   async deleteQuote(context, quoteId) {
     const res = await axios({
       method: 'delete',
+      headers: {
+        'X-XSRF-TOKEN': context.getters.csrfToken,
+      },
       url: `/api/v1/quotes/${quoteId}`,
     })
     return res.data
@@ -144,6 +173,9 @@ export const actions = {
     const res = await axios({
       method: 'post',
       url: '/api/v1/email',
+      headers: {
+        'X-XSRF-TOKEN': context.getters.csrfToken,
+      },
       data,
     })
     return res
