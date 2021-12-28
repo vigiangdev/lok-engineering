@@ -160,6 +160,7 @@
 
 <style scoped>
 .navbar {
+  width: 100vw;
   background: var(--color-gray-50);
   box-shadow: 1px 1px 5px #888;
   height: 6rem;

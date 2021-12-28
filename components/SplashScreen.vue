@@ -56,8 +56,7 @@ export default {
   display: flex;
   justify-content: center;
   background-color: var(--color-gray-200);
-  width: 100%;
-  padding: 2rem;
+  width: 100vw;
 }
 
 .splash-container {
