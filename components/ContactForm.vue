@@ -354,6 +354,7 @@ export default {
     },
     async getRecaptchaToken() {
       try {
+        this.error = ''
         this.token = await this.$recaptcha.getResponse()
       } catch (error) {
         this.token = ''
@@ -361,6 +362,7 @@ export default {
       }
     },
     async resetRecaptchaToken() {
+      this.error = ''
       this.token = ''
       try {
         await this.$recaptcha.reset()
