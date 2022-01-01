@@ -16,6 +16,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(helmet())
 app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      'style-src': 'self',
+    },
+  })
+)
+app.use(
   helmet.frameguard({
     action: 'deny',
   })
