@@ -2,7 +2,7 @@
   <div class="splash">
     <div class="splash-container">
       <div class="title">
-        <h1>AN ENGINEERING COMPANY WITH YOU IN MIND</h1>
+        <h1>AN ENGINEERING COMPANY<span>WITH YOU IN MIND</span></h1>
         <br />
         <p>Innovative solutions that are within your budget</p>
         <br />
@@ -52,6 +52,10 @@ export default {
 </script>
 
 <style scoped>
+h1 span {
+  display: block;
+}
+
 .splash {
   display: flex;
   justify-content: center;
@@ -121,6 +125,7 @@ a {
     width: 100%;
     padding: 1rem 1rem 2rem;
     gap: 1rem;
+    min-height: 275px;
   }
 
   .composition-photo {

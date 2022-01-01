@@ -14,34 +14,26 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
 
-app.use(helmet())
 app.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: true,
-    directives: {
-      'style-src': 'self',
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'style-src': 'self',
+      },
+    },
+    frameguard: {
+      action: 'deny',
+    },
+    hsts: {
+      maxAge: 15552000,
+    },
+    referrerPolicy: {
+      policy: ['strict-origin-when-cross-origin'],
     },
   })
 )
-app.use(
-  helmet.frameguard({
-    action: 'deny',
-  })
-)
-app.use(
-  helmet.hsts({
-    maxAge: 15552000,
-  })
-)
-app.use(helmet.hidePoweredBy())
-app.use(helmet.ieNoOpen())
-app.use(helmet.noSniff())
-app.use(
-  helmet.referrerPolicy({
-    policy: ['strict-origin-when-cross-origin'],
-  })
-)
-app.use(helmet.xssFilter())
+
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
