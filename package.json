@@ -27,6 +27,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/recaptcha": "^1.0.4",
+    "consola": "^2.15.3",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.20.1",
     "csurf": "^1.11.0",

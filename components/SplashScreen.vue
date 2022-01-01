@@ -57,6 +57,7 @@ export default {
   justify-content: center;
   background-color: var(--color-gray-200);
   width: 100vw;
+  padding: 1rem;
 }
 
 .splash-container {
@@ -68,7 +69,7 @@ export default {
 }
 
 .title {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   flex-basis: 40%;
 }
@@ -105,8 +106,8 @@ a {
   }
 
   .title h1 {
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 
   .title p {
@@ -114,33 +115,18 @@ a {
   }
 
   .composition {
-    display: block;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 280px;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
+    gap: 1rem;
   }
 
   .composition-photo {
     width: 30%;
-    box-shadow: 0.5rem 0.5rem 3rem var(--color-primary);
-    position: absolute;
+    box-shadow: 0.5rem 0.5rem 1rem var(--color-primary);
     transition: all 0.2s;
-  }
-
-  .composition-photo-p1 {
-    left: 10%;
-    top: 10%;
-  }
-
-  .composition-photo-p2 {
-    right: 10%;
-    top: 10%;
-  }
-
-  .composition-photo-p3 {
-    left: 35%;
-    top: 20%;
   }
 }
 
@@ -161,6 +147,7 @@ a {
   }
 
   .composition-photo {
+    position: absolute;
     width: 50%;
   }
 
