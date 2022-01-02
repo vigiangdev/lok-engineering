@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
-const helmet = require('helmet')
 const csrf = require('csurf')
 const config = require('./config/db')
 
@@ -13,26 +12,6 @@ const app = express()
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
-
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      useDefaults: true,
-      directives: {
-        'style-src': 'self',
-      },
-    },
-    frameguard: {
-      action: 'deny',
-    },
-    hsts: {
-      maxAge: 15552000,
-    },
-    referrerPolicy: {
-      policy: ['strict-origin-when-cross-origin'],
-    },
-  })
-)
 
 app.use(cookieParser())
 app.use(express.json())

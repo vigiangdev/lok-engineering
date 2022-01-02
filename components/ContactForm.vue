@@ -77,6 +77,11 @@
             @change="updateFiles"
           />
         </div>
+        <div class="container center">
+          <p v-if="fileError" class="error">
+            {{ fileError }}
+          </p>
+        </div>
       </div>
 
       <div class="container">
@@ -197,7 +202,7 @@
 
       <div class="container center">
         <recaptcha />
-        <p v-if="error" class="error">Recaptcha Error. Please try again.</p>
+        <p v-if="error" class="error">{{ error }}</p>
       </div>
 
       <div class="btn-container">
@@ -309,8 +314,10 @@ export default {
   data() {
     return {
       error: '',
+      fileError: '',
       token: '',
       isLoading: false,
+      maxFilesSize: 26214400,
       data: {
         name: '',
         phone: '',
@@ -422,7 +429,24 @@ export default {
         this.$router.push({ path: '/contact/RedirectFail' })
       }
     },
+    resetFiles() {
+      this.$refs.file.value = ''
+      this.files = []
+    },
+    checkFilesSize(event) {
+      let filesSize = 0
+      for (let i = 0; i < event.target.files.length; i++) {
+        filesSize = filesSize + event.target.files[i].size
+      }
+      if (filesSize > this.maxFilesSize) {
+        this.fileError = 'Total file size exceed 25 MB limit. Please try again.'
+        this.resetFiles()
+      } else {
+        this.fileError = ''
+      }
+    },
     updateFiles(event) {
+      this.checkFilesSize(event)
       this.files = event.target.files
     },
   },
