@@ -21,8 +21,10 @@
       </a>
     </div>
     <div class="company-info">
-      <p>Copyright © 2021 Lok Engineering. All Rights Reserved</p>
-      <p>Oakland, CA</p>
+      <p>Copyright © 2021 Lok Engineering. All Rights Reserved.</p>
+      <p>
+        <NuxtLink to="/privacypolicy">Privacy Policy</NuxtLink>
+      </p>
     </div>
   </div>
 </template>
@@ -54,6 +56,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .social-media a {
