@@ -1,4 +1,6 @@
 import Vue from 'vue'
 import VueGtag from 'vue-gtag'
 
-Vue.use(VueGtag, { config: { id: 'G-WH5HM0LKTZ' } })
+export default function ({ $config }) {
+  Vue.use(VueGtag, { config: { id: $config.googleAnalyticsId } })
+}

@@ -79,6 +79,7 @@ export default {
     recaptcha: {
       siteKey: process.env.RECAPTCHA_SITE_KEY,
     },
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
   },
 
   serverMiddleware: ['~/api/index.js'],
