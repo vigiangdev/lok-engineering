@@ -20,7 +20,6 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/google-analytics',
     [
       'nuxt-fontawesome',
       {
@@ -61,6 +60,8 @@ export default {
     ],
   ],
 
+  plugins: ['@/plugins/gtag'],
+
   axios: {
     proxy: true,
   },
@@ -74,16 +75,9 @@ export default {
     display: 'swap',
   },
 
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
-  },
-
   publicRuntimeConfig: {
     recaptcha: {
       siteKey: process.env.RECAPTCHA_SITE_KEY,
-    },
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID,
     },
   },
 
